@@ -16,12 +16,11 @@
 //****************** SERIOUSLY TEST USING console.log()!!! ******************
 
 // Songs
-var mySong = {
-	"title":"24K Magic",
-	"artist":"Bruno Mars",
-	"mp3url":"https://open.spotify.com/track/6b8Be6ljOzmkOmFslEb23P",
-	"imageurl":"https://images-na.ssl-images-amazon.com/images/I/71Gr9aCHQfL._SY355_.jpg",
-}
+//var mySong = {
+//	"title":"24K Magic",
+//	"artist":"Bruno Mars",
+//	"mp3url":"https://open.spotify.com/track/6b8Be6ljOzmkOmFslEb23P",
+//	"imageurl":"https://images-na.ssl-images-amazon.com/images/I/71Gr9aCHQfL._SY355_.jpg",}
 
 
 var myPlayList = [
@@ -52,14 +51,30 @@ var myPlayList = [
 $( document ).ready(function() {
   
 
-$("body").append("<p>Title: " + mySong.title + "</p>");
-$("body").append("<p>Artist: " + mySong.artist + "</p>");
-$("body").append("<p>MP3: <a href=" + mySong.mp3url + ">Link</a></p>");
-$("body").append("<img src=" +mySong.imageurl + ">");
+//$("body").append("<p>Title: " + mySong.title + "</p>");
+//$("body").append("<p>Artist: " + mySong.artist + "</p>");
+//$("body").append("<p>MP3: <a href=" + mySong.mp3url + ">Link</a></p>");
+//$("body").append("<img src=" +mySong.imageurl + ">");
 
-});
+for (var i=0; i < myPlayList.length; i++) {
 
-$("body").append("<p>Title: " +myPlayList(1).title + "</p>");
+var title = myPlayList[i].title;
+var artist= myPlayList[i].artist;
+var url=myPlayList[i].mp3url;
+var image=myPlayList[i].imageurl;
+
+$("body").append(`
+  <div class="playlist">
+	<h2>${title}</h2>
+	<p>Artist: ${artist}</p>
+	<a href= ${url}>Link</a>
+	<img src=${image}>
+  </div>
+`)
+}
+
+
+
 function displayList(){
 
 
@@ -77,3 +92,5 @@ function addSong(){
   
   
 }
+
+});
