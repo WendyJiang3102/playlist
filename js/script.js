@@ -56,22 +56,27 @@ $( document ).ready(function() {
 //$("body").append("<p>MP3: <a href=" + mySong.mp3url + ">Link</a></p>");
 //$("body").append("<img src=" +mySong.imageurl + ">");
 
-for (var i=0; i < myPlayList.length; i++) {
+myPlayList.forEach(function(song){
 
-var title = myPlayList[i].title;
-var artist= myPlayList[i].artist;
-var url=myPlayList[i].mp3url;
-var image=myPlayList[i].imageurl;
+	var title = song.title;
+	var artist = song.artist;
+	var url = song.mp3url;
+	var image = song.imageurl;
 
-$("body").append(`
-  <div class="playlist">
-	<h2>${title}</h2>
-	<p>Artist: ${artist}</p>
-	<a href= ${url}>Link</a>
-	<img src=${image}>
-  </div>
-`)
-}
+	$("body").append(`
+		
+		<div class = "songs">
+			
+			<h3 class = "word">${title}</h3>
+			<a class = "word"> ${artist}</a>
+			<img src = ${image}>
+			<a href = ${url}>Play Song</a>
+			
+		</div>
+
+	`);
+
+});
 
 
 
