@@ -106,8 +106,8 @@ $( document ).ready(function() {
         var song = {
             title: titleInput,
             artist: artistInput,
-            url: urlInput,
-            image: imageInput
+            mp3url: urlInput,
+            imageurl: imageInput
             };
         myPlayList.push(song);
         
